@@ -1,0 +1,43 @@
+<mat-card class="login-form">
+    <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="example-form">
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="First name" [(ngModel)]="user.firstName" name="firstname" required>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Last name" [(ngModel)]="user.lastName" name="lastname" required>
+                        </mat-form-field>
+                    </td>
+                </tr>
+       <!--         <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="accountNum" [(ngModel)]="user.accountNum" name="accountNum" required>
+                        </mat-form-field>
+                    </td>
+                </tr>-->
+             <!--   <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Account Debit" [(ngModel)]="user.accountDebit" name="accountDebit" required>
+                        </mat-form-field>
+                    </td>
+                </tr>-->
+            </table>
+        </form>
+        <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="register(user)" color="primary">Register</button>
+    </mat-card-actions>
+</mat-card>

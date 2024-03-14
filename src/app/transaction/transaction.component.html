@@ -1,0 +1,92 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Debited account</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+        <mat-grid-list cols="2" rowHeight="40px">
+            <mat-grid-tile>Monsieur {{sender.firstName}} {{sender.lastName}}</mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+            <mat-grid-tile>{{sender.accountNum}}</mat-grid-tile>
+            <mat-grid-tile>{{sender.accountDebit}} MAD</mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Credited account</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p></p>
+        <!-- <span>Accounr Number</span><br> -->
+        <div class="example-container">
+            <form>
+                <div class="row">
+                    <div mat-dialog-actions align="center">
+                        <button mat-raised-button  color="primary">Choose recipient</button>
+                    </div>
+                </div>
+                <mat-grid-list cols="2" rowHeight="80px">
+                    <!-- <mat-grid-tile>
+                        <div>
+                            <mat-form-field appearance="fill" class="example-form-field">
+                                <mat-label>Account Number</mat-label>
+                                <input matInput >
+                                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                <mat-hint>Account Number</mat-hint>
+                            </mat-form-field>
+                        </div>
+                    </mat-grid-tile> -->
+                    <!-- <mat-grid-tile>
+                        <div>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Recipient Name</mat-label>
+                                <input matInput placeholder="Name Name">
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                <mat-hint>Recipient Name</mat-hint>
+                            </mat-form-field>
+                        </div>
+                    </mat-grid-tile> -->
+                                       
+                    <mat-grid-tile>
+                        <div>
+                            <mat-form-field appearance="fill" class="example-form-field">
+                                <mat-label>Ammount</mat-label>
+                                <input matInput placeholder="$$$$$.$$$">
+                                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                                <!-- <mat-hint>Ammount</mat-hint> -->
+                            </mat-form-field>
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <div>
+                            <mat-form-field appearance="fill" class="example-form-field">
+                                <mat-label>Reason</mat-label>
+                                <input matInput >
+                                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                                <!-- <mat-hint>Reason</mat-hint> -->
+                            </mat-form-field>
+                        </div>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Transaction Type</mat-card-title>
+                    </mat-card-header>
+                    <!-- <mat-card-content>
+                        Normal
+                        <mat-slide-toggle></mat-slide-toggle>
+                        Instantaneous
+                    </mat-card-content> -->
+                    <input type="checkbox" id="checkboxInput">
+                    <label for="checkboxInput" class="toggleSwitch">
+                    </label>
+                </mat-card>
+                <div mat-dialog-actions align="center">
+                    <button mat-raised-button (click)="send(user)" color="primary">Send</button>
+                </div>
+            </form>
+        </div>
+    </mat-card-content>
+</mat-card>
