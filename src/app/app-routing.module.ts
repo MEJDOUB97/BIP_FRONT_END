@@ -7,9 +7,12 @@ import { RecipientChoiceComponent } from './recipient-choice/recipient-choice.co
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, 
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'send-transaction', component: SidenavComponent },
+  { path: 'home', component: SidenavComponent,
+    children: [
+      { path: 'send-transaction', component: TransactionComponent }
+    ] },
   { path: 'choice-recipient', component: RecipientChoiceComponent }
 ];
 

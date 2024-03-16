@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     //   this.storeUserInSessionStorage(u);
     //   this.router.navigateByUrl("/send-transaction");
     // });
-    this.router.navigateByUrl("/send-transaction");
+    this.router.navigateByUrl("/home");
   }
 
   storeUserInSessionStorage(user: UserDTO): void {
