@@ -25,6 +25,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { RecipientChoiceComponent } from './recipient-choice/recipient-choice.component';
+import { HistoryComponent } from './history/history.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { RecipientChoiceComponent } from './recipient-choice/recipient-choice.co
     SidenavComponent,
     LoginComponent,
     RecipientChoiceComponent,
+    HistoryComponent,
 
   ],
   imports: [
