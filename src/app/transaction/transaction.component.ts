@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { UserDTO } from "./User";
 import { TransactionDTO } from "./Transaction";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-transaction",
@@ -8,7 +9,7 @@ import { TransactionDTO } from "./Transaction";
   styleUrls: ["./transaction.component.css"],
 })
 export class TransactionComponent implements OnInit, AfterViewInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngAfterViewInit(): void {}
 
@@ -46,4 +47,11 @@ export class TransactionComponent implements OnInit, AfterViewInit {
   send(user: any) {
     // Implementation of the send function
 }
+
+choiceReci(){
+  this.router.navigateByUrl("/choice-recipient");
+
+}
+
+
 }

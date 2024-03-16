@@ -24,7 +24,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { RecipientCComponent } from './recipient-c/recipient-c.component';
 import { RecipientChoiceComponent } from './recipient-choice/recipient-choice.component';
 
 
@@ -34,7 +33,6 @@ import { RecipientChoiceComponent } from './recipient-choice/recipient-choice.co
     TransactionComponent,
     SidenavComponent,
     LoginComponent,
-    RecipientCComponent,
     RecipientChoiceComponent,
 
   ],
