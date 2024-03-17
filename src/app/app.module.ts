@@ -8,6 +8,8 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+
 //import { MatExpansionModule, MatGridListModule, MatIconModule, MatListModule, MatMenuModule, MatProgressSpinnerModule, MatSidenavModule, MatSlideToggleModule, MatSpinner } from '@angular/material';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -58,7 +60,7 @@ import { HistoryComponent } from './history/history.component';
     MatListModule,
     MatProgressSpinnerModule,
     HttpClientModule,
-    
+    MatTableModule,
 
   ],
   providers: [
