@@ -1,33 +1,27 @@
-<mat-card>
+<mat-card class="main-card">
   <mat-card-content>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <h2 class="page-title">Historique des transactions</h2> <!-- Titre de la page -->
 
-  <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-  </ng-container>
+    <!-- Itérer sur les groupes de transactions -->
+    <ng-container *ngFor="let group of groupedTransactions">
+      <mat-card class="transaction-group">
+        <mat-card-content class="meta-card">
+          <h3>Date: {{ group[0] }}</h3>
+          <hr> <!-- Ligne de séparation -->
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
+          <!-- Itérer sur les transactions du groupe -->
+          <div *ngFor="let transaction of group[1]" class="transaction-item">
+            <div class="transaction-info">
+              <p class="spacer">{{ transaction.name_recipient }}</p>
+              <!-- <div class="spacer"></div>  Espace entre le nom et le montant -->
+              <p>{{ transaction.montant }}</p>
+            </div>
+            <hr> <!-- Ligne de séparation -->
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <div class="card-spacing"></div> <!-- Espacement entre les cartes -->
+    </ng-container>
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="weight">
-    <th mat-header-cell *matHeaderCellDef> Weight </th>
-    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-  </ng-container>
-
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
-    <th mat-header-cell *matHeaderCellDef> Symbol </th>
-    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
   </mat-card-content>
-
 </mat-card>

@@ -1,30 +1,51 @@
-import { Component } from '@angular/core';
+import { Component,OnInit  } from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  name_recipient: string;
+  receiveDate: Date;
+  montant: number;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  { receiveDate: new Date('2024-03-16'), name_recipient: 'M. Jean Dupont', montant: 100 },
+  { receiveDate: new Date('2024-03-16'), name_recipient: 'Mme Sophie Dubois', montant: 150 },
+  { receiveDate: new Date('2024-03-18'), name_recipient: 'M. Michel Leclerc', montant: 200 },
+  { receiveDate: new Date('2024-03-19'), name_recipient: 'Mme Caroline Rousseau', montant: 50 },
+  { receiveDate: new Date('2024-03-19'), name_recipient: 'M. Thomas Moreau', montant: 75 },
+  { receiveDate: new Date('2024-03-19'), name_recipient: 'Mme Laura Girard', montant: 120 },
+  { receiveDate: new Date('2024-03-22'), name_recipient: 'M. Paul Martin', montant: 80 },
+  { receiveDate: new Date('2024-03-22'), name_recipient: 'Mme Émilie Lefevre', montant: 90 },
+  { receiveDate: new Date('2024-03-24'), name_recipient: 'M. Olivier Leroy', montant: 110 },
+  { receiveDate: new Date('2024-03-25'), name_recipient: 'Mme Lucie Lambert', montant: 70 },
 ];
+
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
   styleUrl: './history.component.css',
 
 })
-export class HistoryComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+export class HistoryComponent implements OnInit {
+  groupedTransactions: [string, PeriodicElement[]][] = [];
+
+  ngOnInit(): void {
+    // Créer un objet pour regrouper les transactions par date
+    const transactionsGroupedByDate: { [key: string]: PeriodicElement[] } = {};
+
+    // Regrouper les transactions par date
+    ELEMENT_DATA.forEach(transaction => {
+      const transactionDate = transaction.receiveDate.toDateString();
+      if (!transactionsGroupedByDate[transactionDate]) {
+        transactionsGroupedByDate[transactionDate] = [];
+      }
+      transactionsGroupedByDate[transactionDate].push(transaction);
+    });
+
+    // Convertir l'objet en tableau pour itérer dessus dans le template
+    this.groupedTransactions = Object.entries(transactionsGroupedByDate);
+  }
+
+
+  displayedColumns: string[] = ['receiveDate', 'name_recipient',  'montant'];
   dataSource = ELEMENT_DATA;
 }
+
