@@ -48,9 +48,10 @@ export class TransactionComponent implements OnInit, AfterViewInit {
     // Implementation of the send function
 }
 
-choiceReci(){
-  this.router.navigateByUrl("/choice-recipient");
 
+
+navigateToRecipientChoice() {
+  this.router.navigate(['/home/choice-recipient']);
 }
 
 

@@ -14,9 +14,10 @@ const routes: Routes = [
     children: [
       { path: 'send-transaction', component: TransactionComponent },
       { path: 'history', component: HistoryComponent },
+      { path: 'choice-recipient', component: RecipientChoiceComponent}
+      
 
     ] },
-  { path: 'choice-recipient', component: RecipientChoiceComponent }
 ];
 
 @NgModule({
