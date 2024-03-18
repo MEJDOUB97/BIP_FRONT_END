@@ -1,0 +1,39 @@
+.container {
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+
+}
+.meta-card{
+  justify-content: center;
+  align-items: center;
+}
+.transaction-group{
+  width: 700px;
+  margin: 0px;
+  border: 1px solid #ccc;
+  justify-content: center;
+
+}
+
+.transaction-item {
+  margin-bottom: 0px;
+}
+
+
+.transaction-info {
+  display: flex;
+  justify-content: space-between; /* Pour aligner les éléments en face l'un de l'autre */
+}
+
+.transaction-info p {
+  margin: 0;
+  display: inline-block; /* Pour afficher les éléments sur la même ligne */
+}
+
+.spacer {
+  margin-left: 10px; /* Ajuster la taille de l'espace selon vos besoins */
+}
+.card-spacing {
+  height: 20px; /* Ajustez la hauteur selon vos besoins */
+}
